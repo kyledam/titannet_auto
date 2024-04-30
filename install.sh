@@ -111,5 +111,6 @@ systemctl enable titand.service
 systemctl start titand.service
 
 sleep 8
+ln -s /usr/local/titan/titan-edge /usr/local/bin
 # Hiển thị thông tin và cấu hình của titan-edge
 systemctl status titand.service && titan-edge config show && titan-edge info
