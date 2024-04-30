@@ -47,7 +47,7 @@ WantedBy=multi-user.target
 apt-get update
 apt-get install -y nano
 
-wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.16/titan_v0.1.16_linux_amd64.tar.gz
+wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.18/titan_v0.1.18_linux_amd64.tar.gz
 
 tar -xf titan_v0.1.16_linux_amd64.tar.gz -C /usr/local
 
