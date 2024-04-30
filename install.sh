@@ -49,11 +49,11 @@ apt-get install -y nano
 
 wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.18/titan_v0.1.18_linux_amd64.tar.gz
 
-tar -xf titan_v0.1.16_linux_amd64.tar.gz -C /usr/local
+tar -xf titan_v0.1.18_linux_amd64.tar.gz -C /usr/local
 
-mv /usr/local/titan_v0.1.16_linux_amd64 /usr/local/titan
+mv /usr/local/titan_v0.1.18_linux_amd64 /usr/local/titan
 
-rm titan_v0.1.16_linux_amd64.tar.gz
+rm titan_v0.1.18_linux_amd64.tar.gz
 
 
 if [ ! -f ~/.bash_profile ]; then
