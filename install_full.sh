@@ -24,7 +24,7 @@ fi
 #read -p "Nhập dung lượng RAM (mặc định là 2 GB): " memory_size
 #memory_size=${memory_size:-2}
 
-read -p "Nhập dung lượng lưu trữ (mặc định là 20 GB): " storage_size
+read -p "Nhập dung lượng lưu trữ (mặc định là 18 GB): " storage_size
 storage_size=${storage_size:-18}
 
 
