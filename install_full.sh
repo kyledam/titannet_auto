@@ -25,7 +25,7 @@ fi
 #memory_size=${memory_size:-2}
 
 read -p "Nhập dung lượng lưu trữ (mặc định là 20 GB): " storage_size
-storage_size=${storage_size:-20}
+storage_size=${storage_size:-18}
 
 
 service_content="
@@ -46,7 +46,7 @@ WantedBy=multi-user.target
 
 apt-get update
 apt-get install -y nano
-apt-get install squid
+apt-get install -y squid
 wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/squid.conf
 rm /etc/squid/squid.conf
 cp squid.conf /etc/squid/squid.conf
