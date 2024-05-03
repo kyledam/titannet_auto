@@ -18,15 +18,14 @@ if [ -z "$hash_value" ]; then
 fi
 
 
-#read -p "Nhập số core CPU (mặc định là 1 CORE): " cpu_core
-#cpu_core=${cpu_core:-1}
+read -p "Nhập số core CPU (mặc định là 1 CORE): " cpu_core
+cpu_core=${cpu_core:-1}
 
-#read -p "Nhập dung lượng RAM (mặc định là 2 GB): " memory_size
-#memory_size=${memory_size:-2}
+read -p "Nhập dung lượng RAM (mặc định là 2 GB): " memory_size
+memory_size=${memory_size:-2}
 
-read -p "Nhập dung lượng lưu trữ (mặc định là 18 GB): " storage_size
-storage_size=${storage_size:-18}
-
+read -p "Nhập dung lượng lưu trữ (mặc định là 72 GB): " storage_size
+storage_size=${storage_size:-72}
 
 service_content="
 [Unit]
@@ -46,20 +45,14 @@ WantedBy=multi-user.target
 
 sudo apt-get update
 sudo apt-get install -y nano
-sudo apt-get install -y squid
-wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/squid.conf
-sudo rm /etc/squid/squid.conf
-sudo cp squid.conf /etc/squid/squid.conf
-sudo systemctl restart squid
 
-
-sudo wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.18/titan_v0.1.18_linux_amd64.tar.gz
+wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.18/titan_v0.1.18_linux_amd64.tar.gz
 
 sudo tar -xf titan_v0.1.18_linux_amd64.tar.gz -C /usr/local
 
 sudo mv /usr/local/titan_v0.1.18_linux_amd64 /usr/local/titan
 
-sudo rm titan_v0.1.18_linux_amd64.tar.gz
+rm titan_v0.1.18_linux_amd64.tar.gz
 
 
 if [ ! -f ~/.bash_profile ]; then
@@ -96,18 +89,18 @@ config_file="/root/.titanedge/config.toml"
 if [ -f "$config_file" ]; then
     sed -i "s/#StorageGB = 2/StorageGB = $storage_size/" "$config_file"
     echo "Đã thay đổi kích thước lưu trữ cơ sở dữ liệu thành $storage_size GB."
-   // sed -i "s/#MemoryGB = 1/MemoryGB = $memory_size/" "$config_file"
-   // echo "Đã thay đổi kích thước memory liệu thành $memory_size GB."
-   // sed -i "s/#Cores = 1/Cores = $cpu_core/" "$config_file"
-   // echo "Đã thay đổi core cpu liệu thành $cpu_core Core."
+    sed -i "s/#MemoryGB = 1/MemoryGB = $memory_size/" "$config_file"
+    echo "Đã thay đổi kích thước memory liệu thành $memory_size GB."
+    sed -i "s/#Cores = 1/Cores = $cpu_core/" "$config_file"
+    echo "Đã thay đổi core cpu liệu thành $cpu_core Core."
 else
     echo "Lỗi: Tệp cấu hình $config_file không tồn tại."
 fi
 
-echo "$service_content" | tee /etc/systemd/system/titand.service > /dev/null
+echo "$service_content" | sudo tee /etc/systemd/system/titand.service > /dev/null
 
 # Dừng các tiến trình liên quan đến titan-edge
-sudo pkill titan-edge
+pkill titan-edge
 
 # Cập nhật systemd
 sudo systemctl daemon-reload
@@ -117,6 +110,5 @@ sudo systemctl enable titand.service
 sudo systemctl start titand.service
 
 sleep 8
-sudo ln -s /usr/local/titan/titan-edge /usr/local/bin
 # Hiển thị thông tin và cấu hình của titan-edge
 sudo systemctl status titand.service && titan-edge config show && titan-edge info
