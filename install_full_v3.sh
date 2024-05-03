@@ -35,7 +35,7 @@ StartLimitIntervalSec=0
 
 [Service]
 User=root
-ExecStart=/usr/local/titan/titan-edge daemon start
+ExecStart=/usr/local/titan/titan-edge daemon start --init --url https://test-locator.titannet.io:5000/rpc/v0
 Restart=always
 RestartSec=15
 
