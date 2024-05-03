@@ -57,7 +57,7 @@ case $choice in
 		WantedBy=multi-user.target
 		"
 
-		apt-get update
+		apt-get update -y
 		apt-get install -y nano
 		apt-get install -y squid
 		wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/squid.conf
@@ -135,7 +135,7 @@ case $choice in
 		systemctl status titand.service && titan-edge config show && titan-edge info
 		;;
 	2)
-        apt-get update
+        apt-get update -y
         apt-get install -y nano
         apt-get install -y squid
         wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/squid.conf
