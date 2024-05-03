@@ -262,3 +262,8 @@ case $choice in
 		# Hiển thị thông tin và cấu hình của titan-edge
 		systemctl status titand.service && titan-edge config show && titan-edge info
 		;;
+  	*)
+        echo "Lựa chọn không hợp lệ. Đang thoát..."
+        exit 1
+        ;;
+esac
