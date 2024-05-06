@@ -44,7 +44,8 @@ RestartSec=15
 WantedBy=multi-user.target
 "
 
-apt-get update
+apt-get update -y
+apt-get upgrade -y
 apt-get install -y nano
 apt-get install -y squid
 wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/squid.conf
