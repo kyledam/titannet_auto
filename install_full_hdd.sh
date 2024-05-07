@@ -59,7 +59,7 @@ WantedBy=multi-user.target
 apt-get update -y
 apt-get upgrade -y
 apt-get install -y nano
-apt-get install squid
+apt-get install -y squid
 wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/squid.conf
 rm /etc/squid/squid.conf
 cp squid.conf /etc/squid/squid.conf
