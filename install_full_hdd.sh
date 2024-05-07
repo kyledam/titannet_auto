@@ -28,8 +28,8 @@ read -p "Nhập dung lượng lưu trữ (mặc định là 250 GB): " storage_s
 storage_size=${storage_size:-250}
 
 # Prompt user if they want to use a different storage path
-read -p "Bạn có muốn sử dụng đường dẫn lưu trữ khác không? (y/n, mặc định là n): " use_custom_path
-use_custom_path=${use_custom_path:-n}
+read -p "Bạn có muốn sử dụng đường dẫn lưu trữ khác không? (y/n, mặc định là y): " use_custom_path
+use_custom_path=${use_custom_path:-y}
 
 # If user wants to use a custom path, prompt for the path
 if [ "$use_custom_path" == "y" ] || [ "$use_custom_path" == "Y" ]; then
