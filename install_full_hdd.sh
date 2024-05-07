@@ -24,8 +24,8 @@ fi
 #read -p "Nhập dung lượng RAM (mặc định là 2 GB): " memory_size
 #memory_size=${memory_size:-2}
 
-read -p "Nhập dung lượng lưu trữ (mặc định là 20 GB): " storage_size
-storage_size=${storage_size:-20}
+read -p "Nhập dung lượng lưu trữ (mặc định là 250 GB): " storage_size
+storage_size=${storage_size:-250}
 
 # Prompt user if they want to use a different storage path
 read -p "Bạn có muốn sử dụng đường dẫn lưu trữ khác không? (y/n, mặc định là y): " use_custom_path
