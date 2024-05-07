@@ -28,8 +28,8 @@ read -p "Nhập dung lượng lưu trữ (mặc định là 20 GB): " storage_si
 storage_size=${storage_size:-20}
 
 # Prompt user if they want to use a different storage path
-read -p "Bạn có muốn sử dụng đường dẫn lưu trữ khác không? (y/n, mặc định là n): " use_custom_path
-use_custom_path=${use_custom_path:-n}
+read -p "Bạn có muốn sử dụng đường dẫn lưu trữ khác không? (y/n, mặc định là y): " use_custom_path
+use_custom_path=${use_custom_path:-y}
 
 # If user wants to use a custom path, prompt for the path
 if [ "$use_custom_path" == "y" ] || [ "$use_custom_path" == "Y" ]; then
@@ -56,7 +56,8 @@ RestartSec=15
 WantedBy=multi-user.target
 "
 
-apt-get update
+apt-get update -y
+apt-get upgrade -y
 apt-get install -y nano
 apt-get install squid
 wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/squid.conf
