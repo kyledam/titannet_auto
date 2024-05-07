@@ -147,4 +147,4 @@ if [ "$use_custom_path" == "y" ] || [ "$use_custom_path" == "Y" ]; then
     systemctl start titand
 fi
 # Hiển thị thông tin và cấu hình của titan-edge
-systemctl status titand.service && titan-edge config show && titan-edge info
+systemctl status titand.service
