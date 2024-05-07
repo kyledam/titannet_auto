@@ -109,10 +109,10 @@ config_file="/root/.titanedge/config.toml"
 if [ -f "$config_file" ]; then
     sed -i "s/#StorageGB = 2/StorageGB = $storage_size/" "$config_file"
     echo "Đã thay đổi kích thước lưu trữ cơ sở dữ liệu thành $storage_size GB."
-   // sed -i "s/#MemoryGB = 1/MemoryGB = $memory_size/" "$config_file"
-   // echo "Đã thay đổi kích thước memory liệu thành $memory_size GB."
-   // sed -i "s/#Cores = 1/Cores = $cpu_core/" "$config_file"
-   // echo "Đã thay đổi core cpu liệu thành $cpu_core Core."
+   # sed -i "s/#MemoryGB = 1/MemoryGB = $memory_size/" "$config_file"
+   # echo "Đã thay đổi kích thước memory liệu thành $memory_size GB."
+   # sed -i "s/#Cores = 1/Cores = $cpu_core/" "$config_file"
+   # echo "Đã thay đổi core cpu liệu thành $cpu_core Core."
 else
     echo "Lỗi: Tệp cấu hình $config_file không tồn tại."
 fi
