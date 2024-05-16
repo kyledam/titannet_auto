@@ -23,8 +23,8 @@ case $option in
         # Stop the code in /ubuntu-node
         cd ~
         cd ubuntu-node || exit
-        (bash manager.sh down & wait)
-
+        bash manager.sh down
+        wait
         # Wait for 2 seconds
         sleep 5
 
