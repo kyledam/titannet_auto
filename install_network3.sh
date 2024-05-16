@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~
 rm -f /root/install_network3.sh
 echo "Select an option:"
 echo "1. Install"
