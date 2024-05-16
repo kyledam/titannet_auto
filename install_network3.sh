@@ -39,7 +39,7 @@ case $option in
         # Change to the extracted directory
         cd ubuntu-node || exit
         # Wait for 2 seconds
-        sleep 2
+        sleep 4
         # Run the manager.sh up command
         bash manager.sh up
         ;;
