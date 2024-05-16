@@ -38,7 +38,8 @@ case $option in
         rm -f ubuntu-node-v1.1.tar
         # Change to the extracted directory
         cd ubuntu-node || exit
-
+        # Wait for 2 seconds
+        sleep 2
         # Run the manager.sh up command
         bash manager.sh up
         ;;
