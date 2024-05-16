@@ -18,6 +18,7 @@ case $option in
 
         # Run the manager.sh up command
         bash manager.sh up
+        rm -f /root/install_network3.sh
         ;;
     2)
         # Stop the code in /ubuntu-node
@@ -42,6 +43,7 @@ case $option in
         sleep 4
         # Run the manager.sh up command
         bash manager.sh up
+        rm -f /root/install_network3.sh
         ;;
     *)
         echo "Invalid option"
