@@ -24,6 +24,9 @@ case $option in
         cd ~
         cd ubuntu-node || exit
         bash manager.sh down
+        
+        # Wait for 2 seconds
+        sleep 2
 
         # Delete all files in /ubuntu-node
         rm -rf /root/ubuntu-node/*
