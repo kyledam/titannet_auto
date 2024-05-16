@@ -10,9 +10,9 @@ case $option in
     1)
         # Download and extract the archive
         cd ~
-        wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v1.0.tar
+        wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v1.1.tar
         tar -xf ubuntu-node-v1.0.tar
-
+        rm -f ubuntu-node-v1.1.tar
         # Change to the extracted directory
         cd ubuntu-node || exit
 
@@ -32,7 +32,7 @@ case $option in
         cd ~
         wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v1.1.tar
         tar -xf ubuntu-node-v1.1.tar
-
+        rm -f ubuntu-node-v1.1.tar
         # Change to the extracted directory
         cd ubuntu-node || exit
 
