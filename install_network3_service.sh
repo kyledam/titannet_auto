@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the URL of the tar file
-TAR_URL="https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v1.0.tar"
-TAR_FILE="ubuntu-node-v1.0.tar"
+TAR_URL="https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v1.1.tar"
+TAR_FILE="ubuntu-node-v1.1.tar"
 EXTRACTED_DIR="ubuntu-node"
 SERVICE_NAME="ubuntu-node.service"
 
