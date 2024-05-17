@@ -1,5 +1,5 @@
 #!/bin/bash
-
+rm -f install_network3_service.sh
 # Define the URL of the tar file
 TAR_URL="https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v1.1.tar"
 TAR_FILE="ubuntu-node-v1.1.tar"
