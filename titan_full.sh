@@ -179,30 +179,8 @@ install_app(){
 }
 
 update_app() {
-    colorEcho ${BLUE} "###  Please select CPU architecture type, enter the number and press enter to continue ###"
-    colorEcho ${GREEN} "--------------------------------------------"
-    echo "1 → x86_64/amd64 architecture"
-    colorEcho ${GREEN} "--------------------------------------------"
-    echo "2 → armv7/arm32 architecture"
-    colorEcho ${GREEN} "--------------------------------------------"
-    echo "3 → armv8/arm64 architecture"   
-    colorEcho ${GREEN} "--------------------------------------------"
-    colorEcho ${BLUE} "###  Please enter the operation number and press enter to continue, or press Ctrl+C to exit this program ###"
-    read -p "$(echo -e "Please select CPU architecture [1-3]:|choose[1-3]:")" choose
-    case $choose in
-    1)
-        download_url=$titan_amd64_url
-        ;;
-    2)
-        download_url=$titan_arm_url
-        ;;
-    3)
-        download_url=$titan_arm64_url
-        ;;
-    *)
-        echo "Invalid input, please select again"
-        ;;
-    esac
+    
+    download_url=$titan_amd64_url      
     download_file $download_url
     restart_app
     colorEcho ${BLUE} "Update successful! update success"
