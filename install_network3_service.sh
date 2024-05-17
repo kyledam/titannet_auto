@@ -4,7 +4,7 @@
 TAR_URL="https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v1.1.tar"
 TAR_FILE="ubuntu-node-v1.1.tar"
 EXTRACTED_DIR="ubuntu-node"
-SERVICE_NAME="ubuntu-node.service"
+SERVICE_NAME="network3.service"
 
 # Download the tar file
 echo "Downloading tar file from $TAR_URL..."
