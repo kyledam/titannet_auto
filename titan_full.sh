@@ -245,8 +245,6 @@ stop_app(){
 
 main() {
     colorEcho ${GREEN} "--------------------------------------------"
-    colorEcho ${GREEN} "######### Welcome to use the tool produced by Moshin Xuwei #########"
-    colorEcho ${GREEN} "--------------------------------------------"
     echo "1 → Install node - install node"
     colorEcho ${GREEN} "--------------------------------------------"
     echo "2 → Uninstall node - uninstall node"
