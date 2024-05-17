@@ -1,5 +1,5 @@
 #!/bin/bash
-
+rm -f titan_full.sh
 RED="31m"
 GREEN="32m"
 YELLOW="33m"
