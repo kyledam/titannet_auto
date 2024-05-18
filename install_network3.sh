@@ -1,5 +1,8 @@
 #!/bin/bash
 cd ~
+apt update -y
+apt upgrade -y
+apt install net-tools -y
 rm -f /root/install_network3.sh
 echo "Select an option:"
 echo "1. Install"
