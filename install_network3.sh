@@ -10,6 +10,9 @@ case $option in
     1)
         # Download and extract the archive
         cd ~
+        apt update -y
+        apt upgrade -y
+        apt install net-tools -y
         wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v1.1.tar
         tar -xf ubuntu-node-v1.1.tar
         rm -f ubuntu-node-v1.1.tar
@@ -23,6 +26,8 @@ case $option in
     2)
         # Stop the code in /ubuntu-node
         cd ~
+        apt update -y
+        apt install net-tools -y
         cd ubuntu-node || exit
         bash manager.sh down
         wait
