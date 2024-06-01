@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+rm -f /root/install_full_v2.sh
 
 echo "Chọn tùy chọn cài đặt:"
 echo "1. Cài đặt cả Squid và Titan Node"
