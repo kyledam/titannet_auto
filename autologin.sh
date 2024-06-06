@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /
+cd /root
 rm -f /etc/systemd/system/container-getty@.service.d/override.conf
 mkdir /etc/systemd/system/container-getty@.service.d
 wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/override.conf
