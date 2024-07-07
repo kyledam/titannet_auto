@@ -46,3 +46,4 @@ systemctl restart danted
 
 echo "Configuration complete. Dante server has been restarted."
 echo "User 'kyledam' has been created with password '123'."
+rm setup_sock5.sh
