@@ -8,6 +8,7 @@ fi
 
 # Update and install dante-server
 apt update -y
+apt install curl -y
 apt install dante-server -y
 
 # Remove danted.conf if it exists
