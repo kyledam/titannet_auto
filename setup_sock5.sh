@@ -54,7 +54,7 @@ sleep 5
 
 # Test the SOCKS5 connection
 echo "Testing SOCKS5 connection..."
-curl_output=$(curl -x socks5://kyledam:123@localhost:1080 http://ifconfig.me)
+curl_output=$(curl -x socks5://kyledam:123@$ip_address:1080 http://ifconfig.me)
 curl_exit_code=$?
 
 if [ $curl_exit_code -eq 0 ]; then
