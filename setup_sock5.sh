@@ -50,7 +50,7 @@ echo "User 'kyledam' has been created with password '123'."
 rm setup_sock5.sh
 
 # Wait for the service to fully start
-sleep 5
+sleep 3
 
 # Test the SOCKS5 connection
 echo "Testing SOCKS5 connection..."
