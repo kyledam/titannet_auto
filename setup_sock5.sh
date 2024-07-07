@@ -47,3 +47,18 @@ systemctl restart danted
 echo "Configuration complete. Dante server has been restarted."
 echo "User 'kyledam' has been created with password '123'."
 rm setup_sock5.sh
+
+# Wait for the service to fully start
+sleep 5
+
+# Test the SOCKS5 connection
+echo "Testing SOCKS5 connection..."
+curl_output=$(curl -x socks5://kyledam:123@localhost:1080 http://ifconfig.me)
+curl_exit_code=$?
+
+if [ $curl_exit_code -eq 0 ]; then
+    echo "SOCKS5 connection test successful."
+    echo "Your IP address according to ifconfig.me: $curl_output"
+else
+    echo "SOCKS5 connection test failed. Exit code: $curl_exit_code"
+fi
