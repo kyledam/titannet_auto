@@ -6,18 +6,30 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-# Update and install dante-server
+# Update and install dante-server and curl
 apt update -y
-apt install curl -y
-apt install dante-server -y
+apt install dante-server curl -y
 
 # Remove danted.conf if it exists
 if [ -f /etc/danted.conf ]; then
     rm /etc/danted.conf
 fi
 
-# Prompt user for IP address
-read -p "Enter your IP address: " ip_address
+# Function to get and display IP addresses
+get_ip_addresses() {
+    echo "Available IP addresses:"
+    ip -4 addr show | grep inet | awk '{print NR")", $2}' | cut -d'/' -f1
+}
+
+# Display IP addresses and let user choose
+get_ip_addresses
+echo "Enter the number of the IP address you want to use:"
+read choice
+
+# Get the selected IP address
+ip_address=$(ip -4 addr show | grep inet | awk '{print $2}' | cut -d'/' -f1 | sed -n "${choice}p")
+
+echo "You selected: $ip_address"
 
 # Create new danted.conf file
 cat > /etc/danted.conf << EOL
@@ -47,10 +59,10 @@ systemctl restart danted
 
 echo "Configuration complete. Dante server has been restarted."
 echo "User 'kyledam' has been created with password '123'."
-rm setup_sock5.sh
 
 # Wait for the service to fully start
 sleep 3
+rm setup_sock5.sh
 
 # Test the SOCKS5 connection
 echo "Testing SOCKS5 connection..."
