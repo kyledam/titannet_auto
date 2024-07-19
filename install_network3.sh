@@ -13,9 +13,9 @@ case $option in
         apt update -y
         apt upgrade -y
         apt install net-tools -y
-        wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v1.1.tar
-        tar -xf ubuntu-node-v1.1.tar
-        rm -f ubuntu-node-v1.1.tar
+        wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v2.1.0.tar
+        tar -xf ubuntu-node-v2.1.0.tar
+        rm -f ubuntu-node-v2.1.0.tar
         # Change to the extracted directory
         cd ubuntu-node || exit
 
@@ -39,9 +39,9 @@ case $option in
 
         # Download the new archive
         cd ~
-        wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v1.1.tar
-        tar -xf ubuntu-node-v1.1.tar
-        rm -f ubuntu-node-v1.1.tar
+        wget https://raw.githubusercontent.com/kyledam/titannet_auto/main/ubuntu-node-v2.1.0.tar
+        tar -xf ubuntu-node-v2.1.0.tar
+        rm -f ubuntu-node-v2.1.0.tar
         # Change to the extracted directory
         cd ubuntu-node || exit
         # Wait for 2 seconds
