@@ -28,14 +28,6 @@ while [[ -z "$USERNAME" ]]; do
     read -p "Enter username for Squid authentication: " USERNAME
 done
 
-read -s -p "Enter password for Squid authentication: " PASSWORD
-echo
-while [[ -z "$PASSWORD" ]]; do
-    echo "Password cannot be empty."
-    read -s -p "Enter password for Squid authentication: " PASSWORD
-    echo
-done
-
 # Install required packages
 echo "Installing Squid and Apache utilities..."
 if command -v apt-get &> /dev/null; then
@@ -54,10 +46,10 @@ if [ -f /etc/squid/squid.conf ]; then
     cp /etc/squid/squid.conf /etc/squid/squid.conf.backup
 fi
 
-# Create password file
-touch /etc/squid/passwords
-chmod 644 /etc/squid/passwords
-htpasswd -b -c /etc/squid/passwords "$USERNAME" "$PASSWORD"
+# Create passwords file and get password with confirmation
+mkdir -p /etc/squid
+echo "Please enter password for user $USERNAME (you will need to type it twice):"
+htpasswd -c /etc/squid/passwords "$USERNAME"
 
 # Create new Squid configuration
 cat > /etc/squid/squid.conf << EOL
@@ -82,13 +74,13 @@ acl Safe_ports port 280		# http-mgmt
 acl Safe_ports port 488		# gss-http
 acl Safe_ports port 591		# filemaker
 acl Safe_ports port 777		# multiling http
-http_access allow local_network
+#http_access allow local_network
 http_access deny !Safe_ports
-http_access allow localhost manager
+#http_access allow localhost manager
 http_access deny manager
-http_access allow localhost
-http_access allow localnet
-http_access allow sms
+#http_access allow localhost
+#http_access allow localnet
+#http_access allow sms
 http_access deny to_localhost
 include /etc/squid/conf.d/*.conf
 http_port $PORT
@@ -162,4 +154,3 @@ if pgrep -x "squid" >/dev/null; then
 else
     echo "Error: Squid failed to start. Please check the logs at /var/log/squid/error.log"
 fi
-EOL
