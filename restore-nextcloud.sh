@@ -133,10 +133,10 @@ echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━�
 
 [ -d "$DATA_BACKUP" ] || error "Data backup không tồn tại: $DATA_BACKUP"
 
-DATA_SIZE=$(du -sh "$DATA_BACKUP" | cut -f1)
-DATA_FILES=$(find "$DATA_BACKUP" -type f 2>/dev/null | wc -l)
-log "Kích thước data: $DATA_SIZE"
-log "Số lượng files: $DATA_FILES"
+#DATA_SIZE=$(du -sh "$DATA_BACKUP" | cut -f1)
+#DATA_FILES=$(find "$DATA_BACKUP" -type f 2>/dev/null | wc -l)
+#log "Kích thước data: $DATA_SIZE"
+#log "Số lượng files: $DATA_FILES"
 
 warn "Đang rsync data (MẤT NHIỀU THỜI GIAN - có thể vài giờ)..."
 
